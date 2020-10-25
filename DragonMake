@@ -1,0 +1,14 @@
+---
+package_name: Ping
+icmd: sbreload
+
+all:
+  targetvers: 13.0
+  archs:
+    - arm64
+    - arm64e
+
+Tweak:
+    type: Tweak
+    logos_files:
+        - "*.x"
