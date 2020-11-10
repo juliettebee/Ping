@@ -4,6 +4,6 @@ Depends: mobilesubstrate
 Version: 2.0.0
 Architecture: iphoneos-arm
 Description: Notification customization.
-Maintainer: Juliette
-Author: Juliette
+Maintainer: Juliette <hi@juliette.page>
+Author: Juliette <hi@juliette.page>
 Section: Tweaks

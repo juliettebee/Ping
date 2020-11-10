@@ -1,5 +1,5 @@
 ---
-package_name: Ping
+name: Ping
 icmd: sbreload
 
 all:
@@ -11,4 +11,4 @@ all:
 Tweak:
     type: Tweak
     logos_files:
-        - "*.x"
+        - "Tweak/*.x"

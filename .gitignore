@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 .theos
-/packages
 .dragon
 build.ninja
+**/.dragon
+**/*.swp
