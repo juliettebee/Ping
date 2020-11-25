@@ -8,7 +8,7 @@ all:
     - arm64
     - arm64e
 
-Tweak:
+PingTweak:
     type: Tweak
     logos_files:
         - "Tweak/*.x"
