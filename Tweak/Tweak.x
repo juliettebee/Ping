@@ -8,15 +8,21 @@
             NCNotificationShortLookView *shortLookView = self.view.subviews[0].subviews[0].subviews[0];
             // =========
             // Variables
-            // ========
-        
-            // Background
+            // ======== 
+            
             MTMaterialView *background = shortLookView.subviews[0];
-
-            // MARK: HEADER
-            PLPlatterViewHeaderContentView *headerContainer = shortLookView.subviews[1];
-            UILabel *appName = headerContainer.subviews[0];
-            UIImage *appIcon = headerContainer.icons[1];
+            // Header
+            PLPlatterHeaderContentView *header = shortLookView.subviews[1];  
+            // Content
+            NCNotificationContentView *content = shortLookView.subviews[2].subviews[0];
+        
+            // Testing
+            [header.titleLabel setHidden:YES];
+            [header.dateLabel setHidden:YES];
+            [content.primaryLabel setHidden:YES];
+            [content.primarySubtitleLabel setHidden:YES];
+            [content.summaryLabel setHidden:YES];
+            background.blurEnabled = NO;
         } 
     %end
 %end
