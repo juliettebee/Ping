@@ -1,4 +1,4 @@
-Package: page.juliette.ping
+Package: page.juliette.Ping 
 Name: Ping
 Depends: mobilesubstrate
 Version: 2.0.0
