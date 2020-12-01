@@ -1,3 +1,6 @@
+# Want to see the old code?
+Switch the branch to `legacy`! Command line: `git checkout legacy` online: just click the button!
+
 # Ping 📣
 Hi! I'm beginning work on Ping 2.0, I want to have it be a lot better, code-wise, and more optimized! 
 ## TODO
