@@ -12,3 +12,9 @@ PingTweak:
     type: Tweak
     logos_files:
         - "Tweak/*.x"
+
+PingTweakPrefs:
+    type: prefs
+    dir: Prefs
+    objc_files:
+        - "*.m"
