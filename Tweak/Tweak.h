@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <Cephei/HBPreferences.h>	
 
 @interface NCNotificationShortLookViewController : UIViewController 
 @end
@@ -33,4 +34,5 @@
 // TODO: Secondary label
 @end
 
-
+HBPreferences *preferences;
+BOOL mtmaterialViewBlurEnabled;

@@ -4,14 +4,17 @@
 <dict>
 	<key>items</key>
 	<array>
-	    <!-- TODO: Put branding here -->
         <dict>
             <key>cell</key>
-            <string>PSLinkCell</string>
+            <string>PSSwitchCell</string>
             <key>label</key>
-            <string>Background</string>
-            <key>detail</key>
-            <string>BackgroundSettings</string>
+            <string>Enable blur</string>
+            <key>default</key>
+            <true/>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>mtmaterialViewBlurEnabled</string>
         </dict>
     </array>
     <key>title</key>

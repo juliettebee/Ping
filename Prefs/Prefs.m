@@ -8,6 +8,10 @@
         if (self) {
             UISwitch *enableTweak = [[UISwitch alloc] init];
             enableTweak.onTintColor = [UIColor colorWithRed: 0.99 green: 0.81 blue: 0.87 alpha: 1.00];
+            // Seeing if tweak is on so we can set the status of the switch correctly
+            preferences  = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.Ping.Prefs"];
+            BOOL enabled;
+            [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
             [enableTweak setOn:true animated:NO];
             // Setup for response to switch update
             [enableTweak addTarget:self action:@selector(tweakStatus:) forControlEvents:UIControlEventValueChanged];
@@ -26,10 +30,8 @@
     -(void)tweakStatus:(id)sender {
         BOOL state = [sender isOn];
         // Disable tweak
-        HBPreferences *preferences  = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.Ping.Prefs"];
-        [preferences registerDefaults:@{
-            @"Enabled": @(state),
-        }];
+        preferences  = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.Ping.Prefs"];
+        [preferences setBool:state forKey:@"Enabled"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"page.juliette.Ping.Prefs/reloadprefs" object:nil];
     }
 @end
