@@ -36,3 +36,6 @@
 
 HBPreferences *preferences;
 BOOL mtmaterialViewBlurEnabled;
+CGFloat backgroundR;
+CGFloat backgroundG;
+CGFloat backgroundB;

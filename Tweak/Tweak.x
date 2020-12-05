@@ -21,9 +21,12 @@
             // Preferences
             // ===========
             [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
+            [preferences registerFloat:&backgroundR default:0 forKey:@"backgroundR"];
+            [preferences registerFloat:&backgroundG default:0 forKey:@"backgroundG"];
+            [preferences registerFloat:&backgroundB default:0 forKey:@"backgroundB"];
+            // Applying
             background.blurEnabled = mtmaterialViewBlurEnabled;
-
-            // Testing
+            background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            // Testing
             [header.titleLabel setHidden:YES];
             [header.dateLabel setHidden:YES];
             [content.primaryLabel setHidden:YES];
