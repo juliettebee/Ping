@@ -5,7 +5,6 @@
         -(void)viewDidLoad {
             NSLog(@"Im alive");
             %orig;         
-            // Get prefs
             NCNotificationShortLookView *shortLookView = self.view.subviews[0].subviews[0].subviews[0];
             // =========
             // Variables
@@ -24,14 +23,12 @@
             [preferences registerFloat:&backgroundR default:0 forKey:@"backgroundR"];
             [preferences registerFloat:&backgroundG default:0 forKey:@"backgroundG"];
             [preferences registerFloat:&backgroundB default:0 forKey:@"backgroundB"];
+            [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
             // Applying
             background.blurEnabled = mtmaterialViewBlurEnabled;
-            background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            // Testing
-            [header.titleLabel setHidden:YES];
-            [header.dateLabel setHidden:YES];
-            [content.primaryLabel setHidden:YES];
-            [content.primarySubtitleLabel setHidden:YES];
-            [content.summaryLabel setHidden:YES];
+            background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            
+           self.view.layer.cornerRadius = notificationAllRadius;
+           self.view.layer.masksToBounds = true;
         } 
    %end
 %end
