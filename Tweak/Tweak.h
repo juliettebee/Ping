@@ -40,3 +40,4 @@ CGFloat backgroundR;
 CGFloat backgroundG;
 CGFloat backgroundB;
 CGFloat notificationAllRadius;
+BOOL transparentBackground;

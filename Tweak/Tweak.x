@@ -20,6 +20,8 @@
             // Preferences
             // ===========
             [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
+            [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
+
             [preferences registerFloat:&backgroundR default:0 forKey:@"backgroundR"];
             [preferences registerFloat:&backgroundG default:0 forKey:@"backgroundG"];
             [preferences registerFloat:&backgroundB default:0 forKey:@"backgroundB"];
@@ -29,6 +31,7 @@
             background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            
            self.view.layer.cornerRadius = notificationAllRadius;
            self.view.layer.masksToBounds = true;
+            background.hidden = transparentBackground; 
         } 
    %end
 %end

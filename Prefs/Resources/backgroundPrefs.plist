@@ -16,6 +16,18 @@
             <key>key</key>
             <string>mtmaterialViewBlurEnabled</string>
         </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Transparent background</string>
+            <key>default</key>
+            <false/>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>allTransparent</string>
+        </dict>
         <!-- TODO: have one input for hex -->
         <dict>
             <key>cell</key>
