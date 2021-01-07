@@ -1,4 +1,4 @@
-#import "Tweak/Tweak.h"
+#import "Tweak.h"
 
 %group Ping
     %hook NCNotificationShortLookViewController
@@ -29,8 +29,7 @@
             // Applying
             background.blurEnabled = mtmaterialViewBlurEnabled;
             background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            
-           self.view.layer.cornerRadius = notificationAllRadius;
-           self.view.layer.masksToBounds = true;
+            self.view.layer.masksToBounds = true;
             background.hidden = transparentBackground; 
         } 
    %end

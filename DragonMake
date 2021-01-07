@@ -10,9 +10,10 @@ all:
     - arm64e
 
 PingTweak:
-    type: Tweak
+    dir: Tweak
+    type: tweak
     logos_files:
-        - "Tweak/*.x"
+        - "*.x"
 
 PingTweakPrefs:
     type: prefs
