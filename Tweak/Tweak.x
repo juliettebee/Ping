@@ -16,21 +16,11 @@
             // Content
             NCNotificationContentView *content = shortLookView.subviews[2].subviews[0];
         
-            // ===========
-            // Preferences
-            // ===========
-            [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
-            [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
-
-            [preferences registerFloat:&backgroundR default:0 forKey:@"backgroundR"];
-            [preferences registerFloat:&backgroundG default:0 forKey:@"backgroundG"];
-            [preferences registerFloat:&backgroundB default:0 forKey:@"backgroundB"];
-            [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
             // Applying
             background.blurEnabled = mtmaterialViewBlurEnabled;
             background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            
-            self.view.layer.masksToBounds = true;
             background.hidden = transparentBackground; 
+            self.view.layer.masksToBounds = true; // This is needed for custom radius
         } 
    %end
 %end
@@ -40,6 +30,16 @@
     BOOL enabled;
     [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
 
+    // ===========
+    // Preferences
+    // ===========
+    [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
+    [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
+
+    [preferences registerFloat:&backgroundR default:0 forKey:@"backgroundR"];
+    [preferences registerFloat:&backgroundG default:0 forKey:@"backgroundG"];
+    [preferences registerFloat:&backgroundB default:0 forKey:@"backgroundB"];
+    [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
     if (enabled)
         %init(Ping)
 }
