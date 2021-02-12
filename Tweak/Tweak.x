@@ -3,7 +3,6 @@
 %group Ping
     %hook NCNotificationShortLookViewController
         -(void)viewDidLoad {
-            NSLog(@"Im alive");
             %orig;         
             NCNotificationShortLookView *shortLookView = self.view.subviews[0].subviews[0].subviews[0];
             // =========
