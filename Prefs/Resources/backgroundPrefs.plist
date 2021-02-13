@@ -38,7 +38,7 @@
             <key>defaults</key>
             <string>page.juliette.Ping.Prefs</string>
             <key>key</key>
-            <string>backgroundColor</string> <!-- I plan to make this a table/array but for the prototype this works -->
+            <string>backgroundColor</string> 
         </dict>
         <dict>
             <key>cell</key>
