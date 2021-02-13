@@ -20,3 +20,4 @@ PingTweakPrefs:
     dir: Prefs
     files:
         - Prefs.m
+        - BackgroundSettings.m
