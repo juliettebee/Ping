@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <Cephei/HBPreferences.h>	
+#import <Cephei/UIColor+HBAdditions.h>
 
 @interface NCNotificationShortLookViewController : UIViewController 
 @end
@@ -36,8 +37,6 @@
 
 HBPreferences *preferences;
 BOOL mtmaterialViewBlurEnabled;
-CGFloat backgroundR;
-CGFloat backgroundG;
-CGFloat backgroundB;
 CGFloat notificationAllRadius;
+NSString *backgroundColor;
 BOOL transparentBackground;

@@ -28,54 +28,17 @@
             <key>key</key>
             <string>allTransparent</string>
         </dict>
-        <!-- TODO: have one input for hex -->
-        <dict>
-            <key>cell</key>
-            <string>PSGroupCell</string>
-            <key>label</key>
-            <string>Background colour</string>
-        </dict>
         <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
-            <key>keyboard</key>
-            <string>numbers</string>
-            <key>key</key>
-            <string>backgroundR</string>
-            <key>placeholder</key>
-            <string>000</string>
             <key>label</key>
-            <string>R</string>
+            <string>Background color (hex)</string>
+            <key>placeholder</key>
+            <string>FFFFF</string>
             <key>defaults</key>
             <string>page.juliette.Ping.Prefs</string>
-        </dict>
-        <dict>
-            <key>cell</key>
-            <string>PSEditTextCell</string>
-            <key>keyboard</key>
-            <string>numbers</string>
             <key>key</key>
-            <string>backgroundG</string>
-            <key>placeholder</key>
-            <string>000</string>
-            <key>label</key>
-            <string>G</string>
-            <key>defaults</key>
-            <string>page.juliette.Ping.Prefs</string>
-        </dict>
-        <dict>
-            <key>cell</key>
-            <string>PSEditTextCell</string>
-            <key>keyboard</key>
-            <string>numbers</string>
-            <key>key</key>
-            <string>backgroundB</string>
-            <key>placeholder</key>
-            <string>000</string>
-            <key>label</key>
-            <string>B</string>
-            <key>defaults</key>
-            <string>page.juliette.Ping.Prefs</string>
+            <string>backgroundColor</string> <!-- I plan to make this a table/array but for the prototype this works -->
         </dict>
         <dict>
             <key>cell</key>

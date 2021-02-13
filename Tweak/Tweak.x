@@ -17,14 +17,15 @@
         
             // Applying
             background.blurEnabled = mtmaterialViewBlurEnabled;
-            background.backgroundColor = [UIColor colorWithRed:backgroundR green:backgroundG blue:backgroundB alpha:1];            
+            if (![backgroundColor isEqual:@""])                 
+                background.backgroundColor = [UIColor hb_colorWithPropertyListValue:backgroundColor];
             background.hidden = transparentBackground; 
             self.view.layer.masksToBounds = true; // This is needed for custom radius
         } 
-   %end
+  %end
 %end
 %ctor {
-    // Seeing if tweak is enabled
+// Seeing if tweak is enabled
     preferences  = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.Ping.Prefs"];
     BOOL enabled;
     [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
@@ -34,10 +35,7 @@
     // ===========
     [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
     [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
-
-    [preferences registerFloat:&backgroundR default:0 forKey:@"backgroundR"];
-    [preferences registerFloat:&backgroundG default:0 forKey:@"backgroundG"];
-    [preferences registerFloat:&backgroundB default:0 forKey:@"backgroundB"];
+    [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
     if (enabled)
         %init(Ping)
