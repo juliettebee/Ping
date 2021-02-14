@@ -40,3 +40,4 @@ BOOL mtmaterialViewBlurEnabled;
 CGFloat notificationAllRadius;
 NSString *backgroundColor;
 BOOL transparentBackground;
+BOOL customSideRadius; 

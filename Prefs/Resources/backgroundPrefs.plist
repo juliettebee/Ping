@@ -15,6 +15,8 @@
             <string>page.juliette.Ping.Prefs</string>
             <key>key</key>
             <string>mtmaterialViewBlurEnabled</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -27,6 +29,8 @@
             <string>page.juliette.Ping.Prefs</string>
             <key>key</key>
             <string>allTransparent</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -34,11 +38,13 @@
             <key>label</key>
             <string>Background color (hex)</string>
             <key>placeholder</key>
-            <string>FFFFF</string>
+            <string>#FFFFF</string>
             <key>defaults</key>
             <string>page.juliette.Ping.Prefs</string>
             <key>key</key>
             <string>backgroundColor</string> 
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -46,6 +52,22 @@
             <key>label</key>
             <string>Other</string>
         </dict>
+        <!-- TODO
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>Each side has a custom radius</string>
+            <key>default</key>
+            <false/>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>customSideRadius</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+        </dict>
+        -->
         <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
@@ -61,6 +83,8 @@
             <string>page.juliette.Ping.Prefs</string>
             <key>default</key>
             <string>0</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
     </array>
     <key>title</key>

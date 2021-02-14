@@ -17,10 +17,13 @@
         
             // Applying
             background.blurEnabled = mtmaterialViewBlurEnabled;
-            if (![backgroundColor isEqual:@""])                 
+            if (![backgroundColor isEqual:@""]) // Only setting color if theres a value 
                 background.backgroundColor = [UIColor hb_colorWithPropertyListValue:backgroundColor];
             background.hidden = transparentBackground; 
             self.view.layer.masksToBounds = true; // This is needed for custom radius
+            if (!customSideRadius) 
+                // Only apply radius to all the sides
+                self.view.layer.cornerRadius = notificationAllRadius; 
         } 
   %end
 %end
@@ -37,6 +40,7 @@
     [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
     [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
+    [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
     if (enabled)
         %init(Ping)
 }
