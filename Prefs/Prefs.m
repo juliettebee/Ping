@@ -12,7 +12,7 @@
             preferences  = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.Ping.Prefs"];
             BOOL enabled;
             [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
-            [enableTweak setOn:true animated:NO];
+            [enableTweak setOn:enabled animated:NO];
             // Setup for response to switch update
             [enableTweak addTarget:self action:@selector(tweakStatus:) forControlEvents:UIControlEventValueChanged];
             UIBarButtonItem* switchAsAnUIBarButtonItemBecauseThatsANeededThingAndCausesCrashesIfItIsntLikeThis= [[UIBarButtonItem alloc] initWithCustomView: enableTweak];
