@@ -1,6 +1,6 @@
 #import "Prefs.h"
 
-@implementation BackgroundSettings 
+@implementation JuliettePingBackgroundSettings 
     -(NSArray *) specifiers {
         if (!_specifiers)
             _specifiers = [self loadSpecifiersFromPlistName:@"backgroundPrefs" target:self];
