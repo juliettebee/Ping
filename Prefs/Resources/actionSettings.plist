@@ -18,6 +18,21 @@
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Background color (hex)</string>
+            <key>placeholder</key>
+            <string>#FFFFF</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>actionBackGroundColor</string> 
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+        </dict>
+
     </array>
     <key>title</key>
     <string>Actions</string>

@@ -28,9 +28,14 @@
     %end
     %hook NCNotificationListCellActionButton 
         -(void)didMoveToWindow { // I would prefer to use a UIViewController instead of an UIView, but there is no UIViewControl that makes sense to use :(
+            MTMaterialView *background = self.backgroundView;
+            background.blurEnabled = actionMtmaterialViewBlurEnabled;
+            if (![actionBackgroundColor isEqual:@""]) {
+                // We need to hide the background view in order to use our custom background color
+                background.hidden = YES;
+                self.backgroundColor = [UIColor hb_colorWithPropertyListValue:actionBackgroundColor];
+            }
             %orig;
-            MTMaterialView *view = self.subviews[0];
-            view.blurEnabled = actionMtmaterialViewBlurEnabled;
         }
     %end
 %end
@@ -47,6 +52,8 @@
     [preferences registerBool:&actionMtmaterialViewBlurEnabled default:YES forKey:@"actionMtmaterialViewBlurEnabled"];
     [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
     [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
+    [preferences registerObject:&actionBackgroundColor default:@"" forKey:@"actionBackGroundColor"];
+
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
     [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
     if (enabled)

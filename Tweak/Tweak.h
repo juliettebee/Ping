@@ -36,6 +36,8 @@
 @end
 
 @interface NCNotificationListCellActionButton : UIView 
+@property (nonatomic,retain) MTMaterialView * backgroundView;  
+@property (nonatomic,retain) UILabel * titleLabel;
 @end
 
 HBPreferences *preferences;
@@ -45,3 +47,4 @@ NSString *backgroundColor;
 BOOL transparentBackground;
 BOOL customSideRadius; 
 BOOL actionMtmaterialViewBlurEnabled;  
+NSString *actionBackgroundColor;
