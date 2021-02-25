@@ -21,3 +21,4 @@ PingTweakPrefs:
     files:
         - Prefs.m
         - BackgroundSettings.m
+        - ActionSettings.m

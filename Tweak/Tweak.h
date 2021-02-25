@@ -35,9 +35,13 @@
 // TODO: Secondary label
 @end
 
+@interface NCNotificationListCellActionButton : UIView 
+@end
+
 HBPreferences *preferences;
 BOOL mtmaterialViewBlurEnabled;
 CGFloat notificationAllRadius;
 NSString *backgroundColor;
 BOOL transparentBackground;
 BOOL customSideRadius; 
+BOOL actionMtmaterialViewBlurEnabled;  

@@ -7,4 +7,7 @@
 @interface JuliettePingBackgroundSettings : PSListController
 @end
 
+@interface JuliettePingActionSettings : PSListController
+@end
+
 HBPreferences *preferences;

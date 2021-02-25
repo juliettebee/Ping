@@ -25,7 +25,14 @@
                 // Only apply radius to all the sides
                 self.view.layer.cornerRadius = notificationAllRadius; 
         } 
-  %end
+    %end
+    %hook NCNotificationListCellActionButton 
+        -(void)didMoveToWindow { // I would prefer to use a UIViewController instead of an UIView, but there is no UIViewControl that makes sense to use :(
+            %orig;
+            MTMaterialView *view = self.subviews[0];
+            view.blurEnabled = actionMtmaterialViewBlurEnabled;
+        }
+    %end
 %end
 %ctor {
 // Seeing if tweak is enabled
@@ -37,6 +44,7 @@
     // Preferences
     // ===========
     [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
+    [preferences registerBool:&actionMtmaterialViewBlurEnabled default:YES forKey:@"actionMtmaterialViewBlurEnabled"];
     [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
     [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];

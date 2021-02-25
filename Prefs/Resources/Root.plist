@@ -11,7 +11,15 @@
             <key>label</key>
             <string>Background</string>
             <key>detail</key>
-            <string>BackgroundSettings</string>
+            <string>JuliettePingBackgroundSettings</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkCell</string>
+            <key>label</key>
+            <string>Swipe action cells</string> <!-- TODO: word this better --> 
+            <key>detail</key>
+            <string>JuliettePingActionSettings</string>
         </dict>
     </array>
     <key>title</key>
