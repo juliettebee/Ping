@@ -1,6 +1,6 @@
 Package: me.justnaaa 
 Name: Ping 📣 
-Depends: mobilesubstrate, ws.hbang.common (>= 1.11)
+Depends: mobilesubstrate, ws.hbang.common (>= 1.11), firmware (>= 13.0)
 Version: 2.0.0
 Architecture: iphoneos-arm
 Description: Notification customization.
