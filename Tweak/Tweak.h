@@ -48,3 +48,6 @@ BOOL transparentBackground;
 BOOL customSideRadius; 
 BOOL actionMtmaterialViewBlurEnabled;  
 NSString *actionBackgroundColor;
+NSString *topBackgroundColor;
+NSString *bottomBackgroundColor;
+BOOL topAndBottomDifferent;

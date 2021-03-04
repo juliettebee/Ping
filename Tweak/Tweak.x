@@ -24,6 +24,13 @@
             if (!customSideRadius) 
                 // Only apply radius to all the sides
                 self.view.layer.cornerRadius = notificationAllRadius; 
+            
+            if (topAndBottomDifferent) {
+                // So the problem with this approach is that radius no longer works & icon location is a bit weird but it works! 
+                background.hidden = YES;
+                header.backgroundColor = [UIColor hb_colorWithPropertyListValue:topBackgroundColor];
+                content.backgroundColor = [UIColor hb_colorWithPropertyListValue:bottomBackgroundColor];
+            }
         } 
     %end
     %hook NCNotificationListCellActionButton 
@@ -53,6 +60,9 @@
     [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
     [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
     [preferences registerObject:&actionBackgroundColor default:@"" forKey:@"actionBackGroundColor"];
+    [preferences registerObject:&topBackgroundColor default:@"" forKey:@"topBackgroundColor"];
+    [preferences registerObject:&bottomBackgroundColor default:@"" forKey:@"bottomBackgroundColor"];
+    [preferences registerBool:&topAndBottomDifferent default:NO forKey:@"topAndBottomDifferent"];
 
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
     [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];

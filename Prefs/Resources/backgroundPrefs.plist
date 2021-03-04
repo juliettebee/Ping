@@ -32,6 +32,49 @@
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
+        <!-- TODO make this toggle the cells -->
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Header and content have custom colors</string>
+            <key>default</key>
+            <false/>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>topAndBottomDifferent</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Top background color (hex)</string>
+            <key>placeholder</key>
+            <string>#FFFFF</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>topBackgroundColor</string> 
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Bottom background color (hex)</string>
+            <key>placeholder</key>
+            <string>#FFFFF</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>bottomBackgroundColor</string> 
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+        </dict>
         <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
