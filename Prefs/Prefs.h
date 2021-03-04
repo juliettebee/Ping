@@ -9,8 +9,6 @@
 @end
 
 @interface JuliettePingActionSettings : PSListController
-    -(void)addSpecalCells;
-    -(void)removeSpecialCells;
 @end
 
 HBPreferences *preferences;
