@@ -32,7 +32,6 @@
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
-        <!-- TODO make this toggle the cells -->
         <dict>
             <key>cell</key>
             <string>PSSwitchCell</string>
@@ -43,6 +42,8 @@
             <key>defaults</key>
             <string>page.juliette.Ping.Prefs</string>
             <key>key</key>
+            <string>topAndBottomDifferent</string>
+            <key>id</key>
             <string>topAndBottomDifferent</string>
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
@@ -60,6 +61,8 @@
             <string>topBackgroundColor</string> 
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>id</key>
+            <string>topBackgroundColor</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -74,6 +77,8 @@
             <string>bottomBackgroundColor</string> 
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>id</key>
+            <string>bottomBackgroundColor</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -88,6 +93,8 @@
             <string>backgroundColor</string> 
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>id</key>
+            <string>normalBackgroundColorSetter</string>
         </dict>
         <dict>
             <key>cell</key>
