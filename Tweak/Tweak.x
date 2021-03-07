@@ -64,9 +64,9 @@
     [preferences registerObject:&topBackgroundColor default:@"" forKey:@"topBackgroundColor"];
     [preferences registerObject:&bottomBackgroundColor default:@"" forKey:@"bottomBackgroundColor"];
     [preferences registerBool:&topAndBottomDifferent default:NO forKey:@"topAndBottomDifferent"];
-
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
     [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
+
     if (enabled)
         %init(Ping)
 }
