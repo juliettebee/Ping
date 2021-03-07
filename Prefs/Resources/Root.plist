@@ -17,7 +17,7 @@
             <key>cell</key>
             <string>PSLinkCell</string>
             <key>label</key>
-            <string>Quick actions</string> <!-- TODO: word this better --> 
+            <string>Quick actions</string>  
             <key>detail</key>
             <string>JuliettePingActionSettings</string>
         </dict>
