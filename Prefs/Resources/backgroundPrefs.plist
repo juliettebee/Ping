@@ -100,12 +100,11 @@
             <key>cell</key>
             <string>PSGroupCell</string>
             <key>label</key>
-            <string>Other</string>
+            <string>Radius</string>
         </dict>
-        <!-- TODO
         <dict>
             <key>cell</key>
-            <string>PSGroupCell</string>
+            <string>PSSwitchCell</string>
             <key>label</key>
             <string>Each side has a custom radius</string>
             <key>default</key>
@@ -114,10 +113,100 @@
             <string>page.juliette.Ping.Prefs</string>
             <key>key</key>
             <string>customSideRadius</string>
+            <key>id</key>
+            <string>customSideRadius</string>
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
-        -->
+ 
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>keyboard</key>
+            <string>numbers</string>
+            <key>key</key>
+            <string>notificationAllRadius</string>
+            <key>placeholder</key>
+            <string>000</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>default</key>
+            <string>0</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>label</key>
+            <string>Top left radius</string>
+            <key>key</key>
+            <string>topLeftRadius</string>
+            <key>id</key>
+            <string>topLeftRadius</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>keyboard</key>
+            <string>numbers</string>
+            <key>key</key>
+            <string>notificationAllRadius</string>
+            <key>placeholder</key>
+            <string>000</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>default</key>
+            <string>0</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>label</key>
+            <string>Top right radius</string>
+            <key>key</key>
+            <string>topRightRadius</string>
+            <key>id</key>
+            <string>topRightRadius</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>keyboard</key>
+            <string>numbers</string>
+            <key>key</key>
+            <string>notificationAllRadius</string>
+            <key>placeholder</key>
+            <string>000</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>default</key>
+            <string>0</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>label</key>
+            <string>Bottom left radius</string>
+            <key>key</key>
+            <string>bottomLeftRadius</string>
+            <key>id</key>
+            <string>bottomLeftRadius</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>keyboard</key>
+            <string>numbers</string>
+            <key>key</key>
+            <string>notificationAllRadius</string>
+            <key>placeholder</key>
+            <string>000</string>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>default</key>
+            <string>0</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>label</key>
+            <string>Bottom right radius</string>
+            <key>key</key>
+            <string>bottomRightRadius</string>
+            <key>id</key>
+            <string>bottomRightRadius</string>
+        </dict>
         <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
@@ -135,6 +224,10 @@
             <string>0</string>
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+            <key>key</key>
+            <string>notificationAllRadius</string>
+            <key>id</key>
+            <string>notificationAllRadius</string>
         </dict>
     </array>
     <key>title</key>

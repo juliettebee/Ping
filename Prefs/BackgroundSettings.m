@@ -6,7 +6,7 @@
         [super viewDidLoad]; 
         // Creating an array of specifiers we will change
         self.topBottomSpecifiers = [[NSMutableArray alloc] init];
-        NSArray *ids = @[@"normalBackgroundColorSetter", @"topBackgroundColor", @"bottomBackgroundColor"];
+        NSArray *ids = @[@"normalBackgroundColorSetter", @"topBackgroundColor", @"bottomBackgroundColor", @"topLeftRadius", @"topRightRadius", @"bottomLeftRadius", @"bottomRightRadius", @"notificationAllRadius"];
         for (PSSpecifier *specifier in [self specifiers])
             if ([ids containsObject:specifier.identifier])
                 [self.topBottomSpecifiers addObject:specifier];
@@ -19,6 +19,15 @@
         else {
             [self removeSpecifier:self.topBottomSpecifiers[0]];
             [self removeSpecifier:self.topBottomSpecifiers[1]];
+        }
+        // Radius toggles
+        if ([preferences boolForKey:@"customSideRadius"])
+            [self removeSpecifier:self.topBottomSpecifiers[7]];
+        else {
+            [self removeSpecifier:self.topBottomSpecifiers[3]];
+            [self removeSpecifier:self.topBottomSpecifiers[4]];
+            [self removeSpecifier:self.topBottomSpecifiers[5]];
+            [self removeSpecifier:self.topBottomSpecifiers[6]];
         }
     }
 
@@ -34,13 +43,29 @@
         // First we need to check the id of the cell to see if its the cell we want
         if ([specifier.identifier isEqual:@"topAndBottomDifferent"]) {
             if ([value boolValue]) {
-                [self removeSpecifier:self.topBottomSpecifiers[2]];
+                [self removeSpecifier:self.topBottomSpecifiers[2] animated:YES];
                 [self insertSpecifier:self.topBottomSpecifiers[0] atIndex:4 animated:YES];
                 [self insertSpecifier:self.topBottomSpecifiers[1] atIndex:5 animated:YES];
             } else {
                 [self removeSpecifier:self.topBottomSpecifiers[0] animated:YES];
                 [self removeSpecifier:self.topBottomSpecifiers[1] animated:YES];
                 [self insertSpecifier:self.topBottomSpecifiers[2] atIndex:4 animated:YES];
+            }
+        }
+        // Radius
+        if ([specifier.identifier isEqual:@"customSideRadius"]) {
+            if ([value boolValue]) {
+                [self removeSpecifier:self.topBottomSpecifiers[7] animated:YES];
+                [self insertSpecifier:self.topBottomSpecifiers[3] atIndex:7 animated:YES];
+                [self insertSpecifier:self.topBottomSpecifiers[4] atIndex:8 animated:YES];
+                [self insertSpecifier:self.topBottomSpecifiers[5] atIndex:9 animated:YES];
+                [self insertSpecifier:self.topBottomSpecifiers[6] atIndex:10 animated:YES];
+            } else {
+                [self removeSpecifier:self.topBottomSpecifiers[3] animated:YES];
+                [self removeSpecifier:self.topBottomSpecifiers[4] animated:YES];
+                [self removeSpecifier:self.topBottomSpecifiers[5] animated:YES];
+                [self removeSpecifier:self.topBottomSpecifiers[6] animated:YES];
+                [self insertSpecifier:self.topBottomSpecifiers[7] atIndex:7 animated:YES];
             }
         }
     }
