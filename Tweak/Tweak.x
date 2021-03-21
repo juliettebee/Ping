@@ -31,6 +31,11 @@
                 header.backgroundColor = [UIColor hb_colorWithPropertyListValue:topBackgroundColor];
                 content.backgroundColor = [UIColor hb_colorWithPropertyListValue:bottomBackgroundColor];
             }
+    
+            // Setting border settings
+            self.view.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
+            self.view.layer.borderWidth = borderWidth;
+
         } 
     %end
     %hook NCNotificationListCellActionButton 
@@ -66,6 +71,8 @@
     [preferences registerBool:&topAndBottomDifferent default:NO forKey:@"topAndBottomDifferent"];
     [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
     [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
+    [preferences registerObject:&borderColor default:@"" forKey:@"borderColor"];
+    [preferences registerInteger:&borderWidth default:0 forKey:@"borderWidth"];
 
     if (enabled)
         %init(Ping)

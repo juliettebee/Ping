@@ -51,3 +51,5 @@ NSString *actionBackgroundColor;
 NSString *topBackgroundColor;
 NSString *bottomBackgroundColor;
 BOOL topAndBottomDifferent;
+NSString *borderColor;
+NSInteger borderWidth;
