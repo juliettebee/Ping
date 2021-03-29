@@ -6,7 +6,8 @@
         [super viewDidLoad]; 
         // Creating an array of specifiers we will change
         self.topBottomSpecifiers = [[NSMutableArray alloc] init];
-        NSArray *ids = @[@"normalBackgroundColorSetter", @"topBackgroundColor", @"bottomBackgroundColor", @"topLeftRadius", @"topRightRadius", @"bottomLeftRadius", @"bottomRightRadius", @"notificationAllRadius"];
+        //NSArray *ids = @[@"normalBackgroundColorSetter", @"topBackgroundColor", @"bottomBackgroundColor", @"topLeftRadius", @"topRightRadius", @"bottomLeftRadius", @"bottomRightRadius", @"notificationAllRadius"];
+        NSArray *ids = @[@"normalBackgroundColorSetter", @"topBackgroundColor", @"bottomBackgroundColor"];
         for (PSSpecifier *specifier in [self specifiers])
             if ([ids containsObject:specifier.identifier])
                 [self.topBottomSpecifiers addObject:specifier];
@@ -21,6 +22,7 @@
             [self removeSpecifier:self.topBottomSpecifiers[1]];
         }
         // Radius toggles
+        /*
         if ([preferences boolForKey:@"customSideRadius"])
             [self removeSpecifier:self.topBottomSpecifiers[7]];
         else {
@@ -29,6 +31,7 @@
             [self removeSpecifier:self.topBottomSpecifiers[5]];
             [self removeSpecifier:self.topBottomSpecifiers[6]];
         }
+        */
     }
 
     -(NSArray *) specifiers {
@@ -53,6 +56,7 @@
             }
         }
         // Radius
+        /*
         if ([specifier.identifier isEqual:@"customSideRadius"]) {
             if ([value boolValue]) {
                 [self removeSpecifier:self.topBottomSpecifiers[7] animated:YES];
@@ -68,6 +72,7 @@
                 [self insertSpecifier:self.topBottomSpecifiers[7] atIndex:7 animated:YES];
             }
         }
+        */
     }
 
 

@@ -102,6 +102,7 @@
             <key>label</key>
             <string>Radius</string>
         </dict>
+        <!--
         <dict>
             <key>cell</key>
             <string>PSSwitchCell</string>
@@ -118,7 +119,6 @@
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
- 
         <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
@@ -207,6 +207,7 @@
             <key>id</key>
             <string>bottomRightRadius</string>
         </dict>
+            -->
         <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>

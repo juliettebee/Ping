@@ -19,7 +19,10 @@
             background.blurEnabled = mtmaterialViewBlurEnabled;
             if (![backgroundColor isEqual:@""]) // Only setting color if theres a value 
                 background.backgroundColor = [UIColor hb_colorWithPropertyListValue:backgroundColor];
-            background.hidden = transparentBackground; 
+            
+            if (transparentBackground)
+                background.backgroundColor = [UIColor clearColor];
+
             self.view.layer.masksToBounds = true; // This is needed for custom radius
             if (!customSideRadius) 
                 // Only apply radius to all the sides
@@ -27,14 +30,14 @@
             
             if (topAndBottomDifferent) {
                 // So the problem with this approach is that radius no longer works & icon location is a bit weird but it works! 
-                background.hidden = YES;
+                background.opaque = NO; 
                 header.backgroundColor = [UIColor hb_colorWithPropertyListValue:topBackgroundColor];
                 content.backgroundColor = [UIColor hb_colorWithPropertyListValue:bottomBackgroundColor];
             }
     
-            // Setting border settings
-            self.view.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
-            self.view.layer.borderWidth = borderWidth;
+            // Setting border 
+            background.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
+            background.layer.borderWidth = borderWidth;
 
         } 
     %end
