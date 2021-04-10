@@ -43,6 +43,24 @@
             <key>action</key>
             <string>respringAction</string>
         </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+        </dict>
+        <dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Source</string>
+			<key>url</key>
+            <string>https://github.com/justnaa/PingTweak</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>footerText</key>
+            <string>Ping, a tweak made by Juliette</string>
+        </dict>
     </array>
     <key>title</key>
     <string>Ping</string>
