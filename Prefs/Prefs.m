@@ -40,6 +40,40 @@
             [background.rightAnchor constraintEqualToAnchor:self.header.rightAnchor],
         ]];
 
+        UIView *iconParent = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        [self.header addSubview:iconParent];
+        iconParent.translatesAutoresizingMaskIntoConstraints = NO;
+        [NSLayoutConstraint activateConstraints:@[
+            [iconParent.topAnchor constraintEqualToAnchor:self.header.topAnchor],
+            [iconParent.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor],
+
+            /*
+            [iconParent.leftAnchor constraintEqualToAnchor:self.header.leftAnchor],
+            [iconParent.rightAnchor constraintEqualToAnchor:self.header.rightAnchor],
+            */
+            [NSLayoutConstraint constraintWithItem:iconParent attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.header attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f],
+            [NSLayoutConstraint constraintWithItem:iconParent attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.header attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f],
+        ]];
+
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        [icon setContentMode:UIViewContentModeScaleToFill];
+        [icon setImage: [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/PingTweakPrefs.bundle/massiveIcon.png"]];
+//        [icon setClipsToBounds:YES];
+        [iconParent addSubview:icon];
+
+        icon.translatesAutoresizingMaskIntoConstraints = NO;
+        [NSLayoutConstraint activateConstraints:@[
+            [icon.widthAnchor constraintEqualToConstant: 100],
+            [icon.heightAnchor constraintEqualToConstant: 100],
+            /*
+            [icon.leftAnchor constraintEqualToAnchor:iconParent.leftAnchor],
+            [icon.rightAnchor constraintEqualToAnchor:iconParent.rightAnchor],
+            */
+            [NSLayoutConstraint constraintWithItem:icon attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:iconParent attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f],
+            [NSLayoutConstraint constraintWithItem:icon attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:iconParent attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f],
+
+        ]];
+
     }
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
