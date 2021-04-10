@@ -62,22 +62,15 @@
     [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
     if (!enabled)
         return;
-    // ===========
-    // Preferences
-    // ===========
-    [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
-    [preferences registerBool:&actionMtmaterialViewBlurEnabled default:YES forKey:@"actionMtmaterialViewBlurEnabled"];
-    [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
-    [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
-    [preferences registerObject:&actionBackgroundColor default:@"" forKey:@"actionBackGroundColor"];
-    [preferences registerObject:&topBackgroundColor default:@"" forKey:@"topBackgroundColor"];
-    [preferences registerObject:&bottomBackgroundColor default:@"" forKey:@"bottomBackgroundColor"];
-    [preferences registerBool:&topAndBottomDifferent default:NO forKey:@"topAndBottomDifferent"];
-    [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
-    [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
-    [preferences registerObject:&borderColor default:@"" forKey:@"borderColor"];
-    [preferences registerInteger:&borderWidth default:0 forKey:@"borderWidth"];
-    [preferences registerBool:&actionTransparentBackground default:NO forKey:@"actionTransparentBackground"];
+
+    JuliettePingHelperClass *helper = [[JuliettePingHelperClass alloc] init];
+    [helper reloadPrefs]; 
+
+    [[NSNotificationCenter defaultCenter] addObserver:helper
+        selector:@selector(reloadPrefs:) 
+        name:@"page.juliette.Ping.Prefs/ReloadPrefs"
+        object:nil];
+
 
     if (enabled)
         %init(Ping)

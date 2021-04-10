@@ -40,6 +40,10 @@
 @property (nonatomic,retain) UILabel * titleLabel;
 @end
 
+@interface JuliettePingHelperClass : NSObject
+- (void) reloadPrefs;
+@end
+
 HBPreferences *preferences;
 BOOL mtmaterialViewBlurEnabled;
 CGFloat notificationAllRadius;
