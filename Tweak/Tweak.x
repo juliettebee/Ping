@@ -4,7 +4,14 @@
     %hook NCNotificationShortLookViewController
         -(void)viewDidLoad {
             %orig;         
-            NCNotificationShortLookView *shortLookView = self.view.subviews[0].subviews[0].subviews[0];
+
+            NCNotificationShortLookView *shortLookView;
+            // 13
+            if (kCFCoreFoundationVersionNumber >= 1665.15 ) 
+                shortLookView = self.view.subviews[0].subviews[0].subviews[0];
+            // 14
+            if (kCFCoreFoundationVersionNumber >= 1751.108)
+                shortLookView = self.view.subviews[0].subviews[0];
             // =========
             // Variables
             // ======== 
