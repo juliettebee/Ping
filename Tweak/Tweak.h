@@ -53,4 +53,4 @@ NSString *bottomBackgroundColor;
 BOOL topAndBottomDifferent;
 NSString *borderColor;
 NSInteger borderWidth;
-
+BOOL actionTransparentBackground;

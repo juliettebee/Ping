@@ -32,6 +32,20 @@
             <key>PostNotification</key>
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
         </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Transparent background</string>
+            <key>default</key>
+            <false/>
+            <key>defaults</key>
+            <string>page.juliette.Ping.Prefs</string>
+            <key>key</key>
+            <string>actionTransparentBackground</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
+        </dict>
 
     </array>
     <key>title</key>

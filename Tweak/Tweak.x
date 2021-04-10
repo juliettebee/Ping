@@ -45,6 +45,7 @@
         -(void)didMoveToWindow { // I would prefer to use a UIViewController instead of an UIView, but there is no UIViewControl that makes sense to use :(
             MTMaterialView *background = self.backgroundView;
             background.blurEnabled = actionMtmaterialViewBlurEnabled;
+            background.hidden = actionTransparentBackground;
             if (![actionBackgroundColor isEqual:@""]) {
                 // We need to hide the background view in order to use our custom background color
                 background.hidden = YES;
@@ -76,6 +77,7 @@
     [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
     [preferences registerObject:&borderColor default:@"" forKey:@"borderColor"];
     [preferences registerInteger:&borderWidth default:0 forKey:@"borderWidth"];
+    [preferences registerBool:&actionTransparentBackground default:NO forKey:@"actionTransparentBackground"];
 
     if (enabled)
         %init(Ping)
