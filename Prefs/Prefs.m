@@ -25,6 +25,28 @@
         return self;
     }
 
+    - (void) viewDidLoad {
+        [super viewDidLoad];
+
+        self.header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+        JAnimatedGradientBackground *background = [[JAnimatedGradientBackground alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+        [self.header addSubview:background];
+
+        background.translatesAutoresizingMaskIntoConstraints = NO;
+        [NSLayoutConstraint activateConstraints:@[
+            [background.topAnchor constraintEqualToAnchor:self.header.topAnchor],
+            [background.bottomAnchor constraintEqualToAnchor:self.header.bottomAnchor],
+            [background.leftAnchor constraintEqualToAnchor:self.header.leftAnchor],
+            [background.rightAnchor constraintEqualToAnchor:self.header.rightAnchor],
+        ]];
+
+    }
+
+    - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+        tableView.tableHeaderView = self.header;
+        return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    }
+
     - (NSArray *)specifiers {
         if (!_specifiers)
             _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];

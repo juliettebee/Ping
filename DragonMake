@@ -24,3 +24,4 @@ PingTweakPrefs:
         - Prefs.m
         - BackgroundSettings.m
         - ActionSettings.m
+        - animatedGradientBackground.m

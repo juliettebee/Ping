@@ -5,8 +5,8 @@
 #import <CepheiPrefs/HBRootListController.h>
 #import <CepheiPrefs/HBAppearanceSettings.h>
 
-
 @interface JuliettePingPreferences : HBRootListController 
+@property (retain, nonatomic) UIView *header;
 - (void) tweakStatus:(id)sender;
 - (void) respringAction;
 @end
@@ -17,6 +17,10 @@
 @end
 
 @interface JuliettePingActionSettings : PSListController
+@end
+
+@interface JAnimatedGradientBackground : UIView 
+@property (retain, nonatomic) CAGradientLayer *gradient;
 @end
 
 HBPreferences *preferences;
