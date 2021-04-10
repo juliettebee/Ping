@@ -6,6 +6,20 @@
 	<array>
 	    <!-- TODO: Put branding here -->
         <dict>
+            <key>cellClass</key>
+            <string>HBTwitterCell</string>
+            <key>label</key>
+            <string>Juliette</string>
+            <key>user</key>
+            <string>JuliettePod</string>
+            <key>iconURL</key>
+            <string>https://pbs.twimg.com/profile_images/1380936576834883593/GxYLhA2e_400x400.png</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+        </dict>
+        <dict>
             <key>cell</key>
             <string>PSLinkCell</string>
             <key>label</key>

@@ -2,9 +2,12 @@
 #import <Preferences/PSSpecifier.h>
 #import <Cephei/HBPreferences.h>	
 #import <Cephei/HBRespringController.h>
+#import <CepheiPrefs/HBRootListController.h>
+#import <CepheiPrefs/HBAppearanceSettings.h>
 
-@interface JuliettePingPreferences : PSListController
--(void)tweakStatus:(id)sender;
+
+@interface JuliettePingPreferences : HBRootListController 
+- (void) tweakStatus:(id)sender;
 - (void) respringAction;
 @end
 

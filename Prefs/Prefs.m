@@ -17,6 +17,10 @@
             [enableTweak addTarget:self action:@selector(tweakStatus:) forControlEvents:UIControlEventValueChanged];
             UIBarButtonItem* switchAsAnUIBarButtonItemBecauseThatsANeededThingAndCausesCrashesIfItIsntLikeThis= [[UIBarButtonItem alloc] initWithCustomView: enableTweak];
             self.navigationItem.rightBarButtonItem = switchAsAnUIBarButtonItemBecauseThatsANeededThingAndCausesCrashesIfItIsntLikeThis;
+            // Colors!
+            HBAppearanceSettings *appearanceSettings = [[HBAppearanceSettings alloc] init];
+            appearanceSettings.tintColor = [UIColor colorWithRed: 0.99 green: 0.81 blue: 0.87 alpha: 1.00];
+            self.hb_appearanceSettings = appearanceSettings;
         }
         return self;
     }
@@ -38,4 +42,6 @@
     - (void) respringAction {
         [HBRespringController respring];
     }
+
+    
 @end

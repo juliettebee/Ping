@@ -4,7 +4,6 @@ icmd: sbreload
 
 all:
   targetvers: 13.0
-  frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei']
   archs:
     - arm64
     - arm64e
@@ -12,6 +11,7 @@ all:
 PingTweak:
     dir: Tweak
     type: tweak
+    frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei']
     files:
         - Tweak.x
         - helpingClass.m
@@ -19,6 +19,7 @@ PingTweak:
 PingTweakPrefs:
     type: prefs
     dir: Prefs
+    frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei', 'CepheiPrefs']
     files:
         - Prefs.m
         - BackgroundSettings.m
