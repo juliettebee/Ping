@@ -34,4 +34,8 @@
         [preferences setBool:state forKey:@"Enabled"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"page.juliette.Ping.Prefs/reloadprefs" object:nil];
     }
+
+    - (void) respringAction {
+        [HBRespringController respring];
+    }
 @end
