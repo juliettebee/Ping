@@ -52,7 +52,7 @@
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>label</key>
-            <string>Top background color (hex)</string>
+            <string>Header background color (hex)</string>
             <key>placeholder</key>
             <string>#FFFFF</string>
             <key>defaults</key>
@@ -68,7 +68,7 @@
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>label</key>
-            <string>Bottom background color (hex)</string>
+            <string>Footer background color (hex)</string>
             <key>placeholder</key>
             <string>#FFFFF</string>
             <key>defaults</key>

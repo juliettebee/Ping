@@ -34,13 +34,6 @@
             if (!customSideRadius) 
                 // Only apply radius to all the sides
                 self.view.layer.cornerRadius = notificationAllRadius; 
-            
-            if (topAndBottomDifferent) {
-                // So the problem with this approach is that radius no longer works & icon location is a bit weird but it works! 
-                background.opaque = NO; 
-                header.backgroundColor = [UIColor hb_colorWithPropertyListValue:topBackgroundColor];
-                content.backgroundColor = [UIColor hb_colorWithPropertyListValue:bottomBackgroundColor];
-            }
     
             // Setting border 
             background.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
@@ -59,6 +52,22 @@
                 self.backgroundColor = [UIColor hb_colorWithPropertyListValue:actionBackgroundColor];
             }
             %orig;
+        }
+    %end
+
+    %hook MTMaterialView
+        - (void) drawRect:(CGRect)rect {
+            %orig;
+            if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)])
+                if (topAndBottomDifferent) {
+                        CGRect topRect = CGRectMake(0, 0, rect.size.width, rect.size.height / 2);
+                        [[UIColor hb_colorWithPropertyListValue:topBackgroundColor] setFill];
+                        UIRectFill(topRect);
+
+                        CGRect bottomRect = CGRectMake(0, rect.size.height / 2, rect.size.width, rect.size.height / 2);
+                        [[UIColor hb_colorWithPropertyListValue:bottomBackgroundColor] setFill];
+                        UIRectFill(bottomRect);
+                }
         }
     %end
 %end
