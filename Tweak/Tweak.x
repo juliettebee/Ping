@@ -38,7 +38,9 @@
             // Setting border 
             background.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
             background.layer.borderWidth = borderWidth;
-
+            
+            [header.titleLabel setHidden:!headerShowTitle];
+//            [header.dateLabel setHidden:!headerShowDate];
         } 
     %end
     %hook NCNotificationListCellActionButton 
@@ -82,10 +84,12 @@
     JuliettePingHelperClass *helper = [[JuliettePingHelperClass alloc] init];
     [helper reloadPrefs]; 
 
+    /*
     [[NSNotificationCenter defaultCenter] addObserver:helper
         selector:@selector(reloadPrefs:) 
         name:@"page.juliette.Ping.Prefs/ReloadPrefs"
         object:nil];
+    */
 
 
     if (enabled)

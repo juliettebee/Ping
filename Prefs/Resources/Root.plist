@@ -23,6 +23,14 @@
             <key>cell</key>
             <string>PSLinkCell</string>
             <key>label</key>
+            <string>Header</string>
+            <key>detail</key>
+            <string>JuliettePingHeaderSettings</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkCell</string>
+            <key>label</key>
             <string>Background</string>
             <key>detail</key>
             <string>JuliettePingBackgroundSettings</string>

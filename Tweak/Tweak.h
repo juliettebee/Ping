@@ -58,3 +58,5 @@ BOOL topAndBottomDifferent;
 NSString *borderColor;
 NSInteger borderWidth;
 BOOL actionTransparentBackground;
+BOOL headerShowTitle;
+BOOL headerShowDate;

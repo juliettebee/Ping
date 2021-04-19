@@ -15,6 +15,8 @@
         [preferences registerObject:&borderColor default:@"" forKey:@"borderColor"];
         [preferences registerInteger:&borderWidth default:0 forKey:@"borderWidth"];
         [preferences registerBool:&actionTransparentBackground default:NO forKey:@"actionTransparentBackground"];
+        [preferences registerBool:&headerShowTitle default:YES forKey:@"headerShowTitle"];
+        [preferences registerBool:&headerShowDate default:YES forKey:@"headerShowDate"];
 
     }
 @end

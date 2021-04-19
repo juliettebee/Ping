@@ -19,6 +19,9 @@
 @interface JuliettePingActionSettings : PSListController
 @end
 
+@interface JuliettePingHeaderSettings : PSListController
+@end
+
 @interface JAnimatedGradientBackground : UIView 
 @property (retain, nonatomic) CAGradientLayer *gradient;
 @end
