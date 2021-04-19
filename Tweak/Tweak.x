@@ -40,9 +40,18 @@
             background.layer.borderWidth = borderWidth;
             
             [header.titleLabel setHidden:!headerShowTitle];
-//            [header.dateLabel setHidden:!headerShowDate];
         } 
     %end
+
+    %hook PLPlatterHeaderContentView
+        - (void) layoutSubviews {
+            // This uses layoutSubviews as the date label visibility gets updated multiple times and we want it to stay constant
+            %orig;
+            if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)])
+                [self.dateLabel setHidden:!headerShowDate];
+        }
+    %end
+
     %hook NCNotificationListCellActionButton 
         -(void)didMoveToWindow { // I would prefer to use a UIViewController instead of an UIView, but there is no UIViewControl that makes sense to use :(
             MTMaterialView *background = self.backgroundView;
