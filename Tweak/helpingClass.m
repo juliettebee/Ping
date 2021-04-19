@@ -17,6 +17,8 @@
         [preferences registerBool:&actionTransparentBackground default:NO forKey:@"actionTransparentBackground"];
         [preferences registerBool:&headerShowTitle default:YES forKey:@"headerShowTitle"];
         [preferences registerBool:&headerShowDate default:YES forKey:@"headerShowDate"];
+        [preferences registerBool:&headerHideIcon default:YES forKey:@"headerHideIcon"];
+
 
     }
 @end

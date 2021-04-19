@@ -60,3 +60,4 @@ NSInteger borderWidth;
 BOOL actionTransparentBackground;
 BOOL headerShowTitle;
 BOOL headerShowDate;
+BOOL headerHideIcon;

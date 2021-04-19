@@ -38,8 +38,9 @@
             // Setting border 
             background.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
             background.layer.borderWidth = borderWidth;
-            
+            // possible TODO: update autolayout for when things are hidden (?) 
             [header.titleLabel setHidden:!headerShowTitle];
+            
         } 
     %end
 
@@ -47,8 +48,14 @@
         - (void) layoutSubviews {
             // This uses layoutSubviews as the date label visibility gets updated multiple times and we want it to stay constant
             %orig;
-            if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)])
+            if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)]) {
                 [self.dateLabel setHidden:!headerShowDate];
+
+                if ([self.iconButtons count] >= 1) {
+                    UIButton *icon = self.iconButtons[0];
+                    [icon setHidden:!headerHideIcon];
+                }
+            }
         }
     %end
 
