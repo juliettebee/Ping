@@ -11,7 +11,8 @@ all:
 PingTweak:
     dir: Tweak
     type: tweak
-    frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei']
+    frameworks: 
+        - Cephei
     files:
         - Tweak.x
         - helpingClass.m
@@ -19,7 +20,9 @@ PingTweak:
 PingTweakPrefs:
     type: prefs
     dir: Prefs
-    frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei', 'CepheiPrefs']
+    frameworks: 
+        - Cephei
+        - CepheiPrefs
     files:
         - Prefs.m
         - BackgroundSettings.m
