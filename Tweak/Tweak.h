@@ -12,8 +12,6 @@
     @property (nonatomic,copy) NSString * secondaryText;
 @end
 
-// TODO: Check out this class
-// https://developer.limneos.net/index.php?ios=13.1.3&framework=MaterialKit.framework&header=MTMaterialView.h
 @interface MTMaterialView : UIView
 @property (assign,getter=isBlurEnabled,nonatomic) BOOL blurEnabled; 
 @end
