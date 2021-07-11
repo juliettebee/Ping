@@ -1,6 +1,7 @@
-Package: me.justnaaa 
+Package: page.juliette.Ping 
 Name: Ping 📣 
 Depends: mobilesubstrate, ws.hbang.common (>= 1.11), firmware (>= 13.0)
+Conflics: me.justnaaa
 Version: 2.0.0+DEV
 Architecture: iphoneos-arm
 Description: Notification customization.
