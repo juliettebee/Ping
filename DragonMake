@@ -15,7 +15,6 @@ PingTweak:
         - Cephei
     files:
         - Tweak.x
-        - helpingClass.m
 
 PingTweakPrefs:
     type: prefs

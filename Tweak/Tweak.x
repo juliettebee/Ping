@@ -40,9 +40,9 @@
     // Setting border 
     background.layer.borderColor = [[UIColor hb_colorWithPropertyListValue:borderColor] CGColor];
     background.layer.borderWidth = borderWidth;
+
     // possible TODO: update autolayout for when things are hidden (?) 
     [header.titleLabel setHidden:!headerShowTitle];
-
 } 
 %end
 
