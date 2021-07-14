@@ -63,6 +63,10 @@
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
             <key>id</key>
             <string>topBackgroundColor</string>
+            <key>toggleable</key>
+            <true/>
+            <key>hideOnToggle</key>
+            <true/>
         </dict>
         <dict>
             <key>cell</key>
@@ -79,6 +83,10 @@
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
             <key>id</key>
             <string>bottomBackgroundColor</string>
+            <key>toggleable</key>
+            <true/>
+            <key>hideOnToggle</key>
+            <true/>
         </dict>
         <dict>
             <key>cell</key>
@@ -95,6 +103,10 @@
             <string>page.juliette.Ping.Prefs/ReloadPrefs</string>
             <key>id</key>
             <string>normalBackgroundColorSetter</string>
+            <key>toggleable</key>
+            <true/>
+            <key>hideOnToggle</key>
+            <false/>
         </dict>
         <dict>
             <key>cell</key>

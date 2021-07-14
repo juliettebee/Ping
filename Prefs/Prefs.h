@@ -20,6 +20,8 @@
 @end
 
 @interface JuliettePingHeaderSettings : PSListController
+@property (retain, nonatomic) NSMutableArray *topBottomSpecifiers;
+-(void) setPreferenceValue:(id)value forSpecifier:(PSSpecifier*)specifier;
 @end
 
 @interface JAnimatedGradientBackground : UIView 
