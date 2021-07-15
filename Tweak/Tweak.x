@@ -43,12 +43,18 @@
 
     // possible TODO: update autolayout for when things are hidden (?) 
     [header.titleLabel setHidden:!headerShowTitle];
+
+    if (headerLabelUniqueColor) {
+        [content.primaryLabel setTextColor:[UIColor hb_colorWithPropertyListValue:headerColor]];
+        // Theres a weird thing that causes header colors to be removed :/
+    } else {
+        [content.primaryLabel setTextColor:[UIColor hb_colorWithPropertyListValue:headerLabelTextColorAll]];
+    }
 } 
 %end
 
 %hook PLPlatterHeaderContentView
-- (void) layoutSubviews {
-    // This uses layoutSubviews as the date label visibility gets updated multiple times and we want it to stay constant
+- (void) layoutSubviews { // This uses layoutSubviews as the date label visibility gets updated multiple times and we want it to stay constant
     %orig;
     if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)]) {
         [self.dateLabel setHidden:!headerShowDate];
@@ -57,6 +63,17 @@
             UIButton *icon = self.iconButtons[0];
             [icon setHidden:!headerHideIcon];
         }
+    }
+}
+%end
+
+%hook NCNotificationContentView
+- (void) layoutSubviews { // Subviews because the color of the secondaryLabel gets changed after viewDidLoad and didMoveToWindow
+    %orig;
+    if (headerLabelUniqueColor) {
+        [self.secondaryLabel setTextColor:[UIColor hb_colorWithPropertyListValue:notificationTextColor]];
+    } else {
+        [self.secondaryLabel setTextColor:[UIColor hb_colorWithPropertyListValue:headerLabelTextColorAll]];
     }
 }
 %end
@@ -100,22 +117,28 @@
     if (!enabled)
         return;
 
-    [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
-    [preferences registerBool:&actionMtmaterialViewBlurEnabled default:YES forKey:@"actionMtmaterialViewBlurEnabled"];
-    [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
     [preferences registerObject:&backgroundColor default:@"" forKey:@"backgroundColor"];
     [preferences registerObject:&actionBackgroundColor default:@"" forKey:@"actionBackGroundColor"];
     [preferences registerObject:&topBackgroundColor default:@"" forKey:@"topBackgroundColor"];
     [preferences registerObject:&bottomBackgroundColor default:@"" forKey:@"bottomBackgroundColor"];
-    [preferences registerBool:&topAndBottomDifferent default:NO forKey:@"topAndBottomDifferent"];
-    [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
-    [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
     [preferences registerObject:&borderColor default:@"" forKey:@"borderColor"];
-    [preferences registerInteger:&borderWidth default:0 forKey:@"borderWidth"];
+    [preferences registerObject:&headerColor default:@"" forKey:@"headerLabelTextColorTitle"];
+    [preferences registerObject:&headerLabelTextColorAll default:@"" forKey:@"headerLabelTextColorAll"];
+    [preferences registerObject:&notificationTextColor default:@"" forKey:@"headerLabelTextColorMessage"];
+//    [preferences registerObject:&dateColor default:@"" forKey:@"headerLabelTextColorDate"];
+//    [preferences registerObject:&appNameColor default:@"" forKey:@"headerLabelTextColorAppName"];
+    [preferences registerBool:&mtmaterialViewBlurEnabled default:YES forKey:@"mtmaterialViewBlurEnabled"];
+    [preferences registerBool:&actionMtmaterialViewBlurEnabled default:YES forKey:@"actionMtmaterialViewBlurEnabled"];
+    [preferences registerBool:&transparentBackground default:NO forKey:@"allTransparent"];
+    [preferences registerBool:&topAndBottomDifferent default:NO forKey:@"topAndBottomDifferent"];
+    [preferences registerBool:&customSideRadius default:NO forKey:@"customSideRadius"];
     [preferences registerBool:&actionTransparentBackground default:NO forKey:@"actionTransparentBackground"];
     [preferences registerBool:&headerShowTitle default:YES forKey:@"headerShowTitle"];
     [preferences registerBool:&headerShowDate default:YES forKey:@"headerShowDate"];
     [preferences registerBool:&headerHideIcon default:YES forKey:@"headerHideIcon"];
+    [preferences registerBool:&headerLabelUniqueColor default:NO forKey:@"headerLabelUniqueColor"];
+    [preferences registerFloat:&notificationAllRadius default:0 forKey:@"notificationAllRadius"];
+    [preferences registerInteger:&borderWidth default:0 forKey:@"borderWidth"];
 
     if (enabled)
         %init(Ping)

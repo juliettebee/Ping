@@ -17,7 +17,7 @@
 @end
 
 @interface PLPlatterHeaderContentView : UIView 
-@property (getter=_titleLabel,nonatomic,readonly) UILabel * titleLabel; 
+@property (getter=_titleLabel,nonatomic,readonly) UILabel * titleLabel; // App name 
 @property (getter=_dateLabel,nonatomic,readonly) UILabel * dateLabel; 
 @property (nonatomic,readonly) NSArray * iconButtons; // [0] is the app icon - if there is one 
 @property (nonatomic,copy) NSString * title; // App name
@@ -30,7 +30,7 @@
 @property (setter=_setPrimaryLabel:,getter=_primaryLabel,nonatomic,retain) UILabel * primaryLabel;  // Alert title
 @property (setter=_setPrimarySubtitleLabel:,getter=_primarySubtitleLabel,nonatomic,retain) UILabel * primarySubtitleLabel;  // Unknown
 @property (setter=_setSummaryLabel:,getter=_summaryLabel,nonatomic,retain) BSUIEmojiLabelView * summaryLabel;                           //The X amount of notifications from this app label
-// TODO: Secondary label
+@property(readonly, nonatomic, getter=_secondaryLabel) UILabel *secondaryLabel; // Notification text
 @end
 
 @interface NCNotificationListCellActionButton : UIView 
@@ -43,19 +43,25 @@
 @end
 
 HBPreferences *preferences;
-BOOL mtmaterialViewBlurEnabled;
-CGFloat notificationAllRadius;
-NSString *backgroundColor;
 BOOL transparentBackground;
 BOOL customSideRadius; 
 BOOL actionMtmaterialViewBlurEnabled;  
-NSString *actionBackgroundColor;
-NSString *topBackgroundColor;
-NSString *bottomBackgroundColor;
+BOOL mtmaterialViewBlurEnabled;
 BOOL topAndBottomDifferent;
-NSString *borderColor;
-NSInteger borderWidth;
 BOOL actionTransparentBackground;
 BOOL headerShowTitle;
 BOOL headerShowDate;
 BOOL headerHideIcon;
+BOOL headerLabelUniqueColor;
+NSString *actionBackgroundColor;
+NSString *topBackgroundColor;
+NSString *bottomBackgroundColor;
+NSString *borderColor;
+NSString *headerColor;
+NSString *headerLabelTextColorAll;
+NSString *notificationTextColor;
+NSString *backgroundColor;
+// NSString *dateColor;
+// NSString *appNameColor;
+NSInteger borderWidth;
+CGFloat notificationAllRadius;
