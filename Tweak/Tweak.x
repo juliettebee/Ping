@@ -3,7 +3,7 @@
 %group Ping
 
 %hook NCNotificationShortLookViewController
--(void)viewDidLoad {
+-(void) viewDidLoad {
     %orig;         
 
     NCNotificationShortLookView *shortLookView;
@@ -54,7 +54,7 @@
 %end
 
 %hook PLPlatterHeaderContentView
-- (void) layoutSubviews { // This uses layoutSubviews as the date label visibility gets updated multiple times and we want it to stay constant
+-(void) layoutSubviews { // This uses layoutSubviews as the date label visibility gets updated multiple times and we want it to stay constant
     %orig;
     if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)]) {
         [self.dateLabel setHidden:!headerShowDate];
@@ -68,7 +68,7 @@
 %end
 
 %hook NCNotificationContentView
-- (void) layoutSubviews { // Subviews because the color of the secondaryLabel gets changed after viewDidLoad and didMoveToWindow
+-(void) layoutSubviews { // Subviews because the color of the secondaryLabel gets changed after viewDidLoad and didMoveToWindow
     %orig;
     if (headerLabelUniqueColor) {
         [self.secondaryLabel setTextColor:[UIColor hb_colorWithPropertyListValue:notificationTextColor]];
@@ -79,7 +79,7 @@
 %end
 
 %hook NCNotificationListCellActionButton 
--(void)didMoveToWindow { // I would prefer to use a UIViewController instead of an UIView, but there is no UIViewControl that makes sense to use :(
+-(void) didMoveToWindow { // I would prefer to use a UIViewController instead of an UIView, but there is no UIViewControl that makes sense to use :(
     MTMaterialView *background = self.backgroundView;
     background.blurEnabled = actionMtmaterialViewBlurEnabled;
     background.hidden = actionTransparentBackground;
@@ -93,7 +93,7 @@
 %end
 
 %hook MTMaterialView
-- (void) drawRect:(CGRect)rect {
+-(void) drawRect:(CGRect)rect {
     %orig;
     if ([self.superview isKindOfClass:%c(NCNotificationShortLookView)])
         if (topAndBottomDifferent) {

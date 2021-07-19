@@ -9,20 +9,20 @@
     self.topBottomSpecifiers = [[NSMutableArray alloc] init];
     for (PSSpecifier *specifier in [self specifiers])
         if ([[specifier propertyForKey:@"toggleable"] boolValue])
-                [self.topBottomSpecifiers addObject:specifier];
+   [self.topBottomSpecifiers addObject:specifier];
 
     // Now we're seeing what we need to change
     preferences  = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.Ping.Prefs"];
-    
+
     if ([preferences boolForKey:@"headerLabelUniqueColor"]) { 
         // If its true we need to hide the background color cell
         for (PSSpecifier *specifier in self.topBottomSpecifiers)
             if (![[specifier propertyForKey:@"hideOnToggle"] boolValue])
-                [self removeSpecifier:specifier];
+                      [self removeSpecifier:specifier];
     } else {
         for (PSSpecifier *specifier in self.topBottomSpecifiers)
             if ([[specifier propertyForKey:@"hideOnToggle"] boolValue])
-                [self removeSpecifier:specifier];
+                     [self removeSpecifier:specifier];
     }
 }
 
@@ -40,8 +40,8 @@
          else
              if ([value boolValue])
                  [self insertSpecifier:specifier atIndex:5 animated:YES];
-            else
-                [self removeSpecifier:specifier];
+             else
+                 [self removeSpecifier:specifier];
      }
  }
 }
