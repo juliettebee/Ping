@@ -4,7 +4,6 @@
 <dict>
 	<key>items</key>
 	<array>
-	    <!-- TODO: Put branding here -->
         <dict>
             <key>cellClass</key>
             <string>HBTwitterCell</string>
